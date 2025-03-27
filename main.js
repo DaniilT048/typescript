@@ -1,9 +1,9 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrderStatus = void 0;
-exports.sumArray = sumArray;
-exports.createUser = createUser;
-exports.getOrderStatus = getOrderStatus;
+// Object.defineProperty(exports, "__esModule", { value: true });
+// exports.OrderStatus = void 0;
+// exports.sumArray = sumArray;
+// exports.createUser = createUser;
+// exports.getOrderStatus = getOrderStatus;
 console.log('#19. TypeScript homework example file');
 /*
  * #1
@@ -19,9 +19,17 @@ console.log('#19. TypeScript homework example file');
  * 4. Функція має використовувати метод `reduce` для обчислення суми елементів масиву.
  *
  */
-function sumArray() {
-    // code here
+function sumArray(numbers) {
+    if (numbers.length === 0) {
+        return 0;
+    }
+    else {
+        return numbers.reduce((total, amount) => total + amount);
+    }
 }
+// Вивід до консолі для демонстрації
+console.log(sumArray([1, 2, 3, 4])); // Повинно вивести 10
+console.log(sumArray([])); // Повинно вивести 0
 function createUser() {
     // code here
 }
@@ -48,9 +56,9 @@ function createUser() {
  * 6. Параметри функції та її тип повернення мають бути явно типізовані.
  *
  */
-var OrderStatus;
-(function (OrderStatus) {
-})(OrderStatus || (exports.OrderStatus = OrderStatus = {}));
-function getOrderStatus() {
-    // code here
-}
+// var OrderStatus;
+// (function (OrderStatus) {
+// })(OrderStatus || (exports.OrderStatus = OrderStatus = {}));
+// function getOrderStatus() {
+//     // code here
+// }

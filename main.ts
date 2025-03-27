@@ -15,13 +15,17 @@ console.log('#19. TypeScript homework example file')
  *
  */
 
-function sumArray() {
-  // code here
+function sumArray(numbers: number[]) {
+    if (numbers.length === 0) {
+        return 0;
+    }else{
+      return numbers.reduce((total :number, amount: number):number => total + amount);
+    }
 }
 
 // Вивід до консолі для демонстрації
-// console.log(sumArray([1, 2, 3, 4])) // Повинно вивести 10
-// console.log(sumArray([])) // Повинно вивести 0
+console.log(sumArray([1, 2, 3, 4])) // Повинно вивести 10
+console.log(sumArray([])) // Повинно вивести 0
 
 /*
  * #2
