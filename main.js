@@ -1,9 +1,4 @@
 "use strict";
-// Object.defineProperty(exports, "__esModule", { value: true });
-// exports.OrderStatus = void 0;
-// exports.sumArray = sumArray;
-// exports.createUser = createUser;
-// exports.getOrderStatus = getOrderStatus;
 console.log('#19. TypeScript homework example file');
 /*
  * #1
@@ -30,11 +25,14 @@ function sumArray(numbers) {
 // Вивід до консолі для демонстрації
 console.log(sumArray([1, 2, 3, 4])); // Повинно вивести 10
 console.log(sumArray([])); // Повинно вивести 0
-function createUser() {
-    // code here
+function createUser(name, age, isActive) {
+    if (!isActive) {
+        isActive = true;
+    }
+    return { name, age, isActive };
 }
-// const newUser = createUser('Анна', 25, true)
-// console.log(newUser)
+const newUser = createUser('Анна', 25, true);
+console.log(newUser);
 /*
  * #3
  *
@@ -56,9 +54,15 @@ function createUser() {
  * 6. Параметри функції та її тип повернення мають бути явно типізовані.
  *
  */
-// var OrderStatus;
-// (function (OrderStatus) {
-// })(OrderStatus || (exports.OrderStatus = OrderStatus = {}));
-// function getOrderStatus() {
-//     // code here
-// }
+var OrderStatus;
+(function (OrderStatus) {
+})(OrderStatus || (OrderStatus = {}));
+function getOrderStatus() {
+    // code here
+}
+// Приклад виклику функції
+// console.log(getOrderStatus(OrderStatus.Pending))
+// console.log(getOrderStatus(OrderStatus.Shipped))
+// console.log(getOrderStatus(OrderStatus.Delivered))
+// console.log(getOrderStatus(OrderStatus.Cancelled))
+// export { sumArray, createUser, OrderStatus, getOrderStatus }

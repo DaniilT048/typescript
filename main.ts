@@ -43,14 +43,21 @@ console.log(sumArray([])) // Повинно вивести 0
  *
  */
 
-type User = {}
-
-function createUser() {
-  // code here
+type User = {
+    name: string;
+    age: number;
+    isActive: boolean;
 }
 
-// const newUser = createUser('Анна', 25, true)
-// console.log(newUser)
+function createUser(name: string, age: number, isActive:boolean):User {
+    if(!isActive){
+       isActive = true;
+    }
+    return {name, age, isActive};
+}
+
+const newUser = createUser('Анна', 25, true)
+console.log(newUser)
 
 /*
  * #3
@@ -86,4 +93,4 @@ function getOrderStatus() {
 // console.log(getOrderStatus(OrderStatus.Delivered))
 // console.log(getOrderStatus(OrderStatus.Cancelled))
 
-export { sumArray, createUser, OrderStatus, getOrderStatus }
+// export { sumArray, createUser, OrderStatus, getOrderStatus }
