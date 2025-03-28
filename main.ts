@@ -49,7 +49,7 @@ type User = {
     isActive: boolean;
 }
 
-function createUser(name: string, age: number, isActive:boolean):User {
+function createUser(name: string, age: number, isActive:boolean = true):User {
     if(!isActive){
        isActive = true;
     }
@@ -82,14 +82,21 @@ console.log(newUser)
  */
 
 enum OrderStatus {
-    Pending = 'Замовлення очікує на обробку',
-    Shipped = 'Замовлення було відправлено',
-    Delivered = 'Замовлення доставлено',
-    Cancelled = 'Замовлення скасовано',
+    Pending = 'Pending',
+    Shipped = 'Shipped',
+    Delivered = 'Delivered',
+    Cancelled = 'Cancelled',
+}
+
+const textForOrderStatus: Record<OrderStatus, string> = {
+    [OrderStatus.Pending]: 'Замовлення очікує на обробку',
+    [OrderStatus.Shipped]: 'Замовлення було відправлено',
+    [OrderStatus.Delivered]: 'Замовлення доставлено',
+    [OrderStatus.Cancelled]: 'Замовлення скасовано'
 }
 
 function getOrderStatus(status: OrderStatus): string {
-    return status;
+    return textForOrderStatus[status];
 }
 
 // Приклад виклику функції
