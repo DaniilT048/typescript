@@ -50,10 +50,9 @@ type User = {
 }
 
 function createUser(name: string, age: number, isActive:boolean = true):User {
-    if(!isActive){
-       isActive = true;
-    }
+
     return {name, age, isActive};
+
 }
 
 const newUser = createUser('Анна', 25, true)
